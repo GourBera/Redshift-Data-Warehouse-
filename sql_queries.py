@@ -94,8 +94,8 @@ time_table_create = ("""CREATE TABLE time(
 # STAGING TABLES
 staging_events_copy = ("""
     copy staging_events from {data_bucket}
-    credentials 'aws_access_key_id=AKIA2QRWNYU5QKEBGGFT;
-    aws_secret_access_key=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'
+    credentials 'aws_access_key_id=;
+    aws_secret_access_key='
     region 'us-west-2' format as JSON {log_json_path}
     timeformat as 'epochmillisecs';
     """).format(data_bucket=config['S3']['LOG_DATA'],
@@ -103,8 +103,8 @@ staging_events_copy = ("""
 
 staging_songs_copy = ("""
     copy staging_songs from {data_bucket}
-    credentials 'aws_access_key_id=AKIA2QRWNYU5QKEBGGFT;
-    aws_secret_access_key=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'
+    credentials 'aws_access_key_id=;
+    aws_secret_access_key='
     region 'us-west-2' format as JSON 'auto';
     """).format(data_bucket=config['S3']['SONG_DATA'])
 
